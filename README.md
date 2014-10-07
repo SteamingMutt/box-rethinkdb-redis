@@ -1,7 +1,9 @@
 box-rethinkdb
 =============
 
-Wercker box for rethinkdbdash
+Wercker box for node, rethinkdb, and redis.
+
+based off of neumino's [box-rethinkdbdash](https://github.com/neumino/box-rethinkdbdash)
 
 based off of Micha Hernandez van Leuffen's [RethinkDB box](Micha Hernandez van Leuffen)
 
