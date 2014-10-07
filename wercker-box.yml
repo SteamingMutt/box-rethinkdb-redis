@@ -15,7 +15,7 @@ script: |
   sudo apt-add-repository ppa:chris-lea/redis-server -y
   git clone https://github.com/joyent/node
   cd node
-  git checkout v0.11.10-release
+  git checkout v0.11.14-release
   ./configure
   make -j 4
   sudo make install
