@@ -1,6 +1,8 @@
 box-rethinkdb-redis
 =============
 
+[![wercker status](https://app.wercker.com/status/22a7deda43f7fcd8f4a0597fb1b4fd47/m "wercker status")](https://app.wercker.com/project/bykey/22a7deda43f7fcd8f4a0597fb1b4fd47)
+
 Wercker box for node, rethinkdb, and redis.
 
 based off of neumino's [box-rethinkdbdash](https://github.com/neumino/box-rethinkdbdash)
