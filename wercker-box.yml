@@ -11,6 +11,7 @@ keywords:
 packages:
   - rethinkdb@1.15.1
   - node@1.11.14
+  - python@2.7
 script: |
   sudo apt-add-repository ppa:chris-lea/redis-server -y
   git clone https://github.com/joyent/node
@@ -24,6 +25,7 @@ script: |
   source /etc/lsb-release && echo "deb http://download.rethinkdb.com/apt $DISTRIB_CODENAME main" | sudo tee /etc/apt/sources.list.d/rethinkdb.list
   wget -O- http://download.rethinkdb.com/apt/pubkey.gpg | sudo apt-key add -
   sudo apt-get update
-  sudo apt-get install rethinkdb redis-server -y
+  sudo apt-get install build-essential zlib1g-dev libbz2-dev libreadline-dev
+  sudo apt-get install python2.7 rethinkdb redis-server -y
   sudo mkdir -p /etc/rethinkdb/instances.d
   sudo -- sh -c "echo 'bind=all' > /etc/rethinkdb/instances.d/default.conf"
