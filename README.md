@@ -1,4 +1,4 @@
-box-rethinkdb
+box-rethinkdb-redis
 =============
 
 Wercker box for node, rethinkdb, and redis.
