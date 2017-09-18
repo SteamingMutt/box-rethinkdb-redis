@@ -1,27 +1,20 @@
 name: box-rethinkdb-redis
-version: 0.1.7
+version: 0.2.0
 inherits: wercker/ubuntu12.04-webessentials@0.0.3
 type: main
-platform: ubuntu@12.04
-description: "Box running node@0.11.14, rethinkdb@1.15.1, redis@latest"
+platform: ubuntu@16.04
+description: "Box running node@8, rethinkdb@latest, redis@latest"
 keywords:
   - rethinkdb
   - redis
   - nodejs
 packages:
-  - rethinkdb@1.15.1
-  - node@1.11.14
+  - rethinkdb@2.3
+  - node@8
   - python@2.7
 script: |
   sudo apt-add-repository ppa:chris-lea/redis-server -y
-  git clone https://github.com/joyent/node
-  cd node
-  git checkout v0.11.14-release
-  ./configure
-  make -j 4
-  sudo make install
-  sudo ls -s /usr/bin/node node
-  cd
+  curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
   source /etc/lsb-release && echo "deb http://download.rethinkdb.com/apt $DISTRIB_CODENAME main" | sudo tee /etc/apt/sources.list.d/rethinkdb.list
   wget -O- http://download.rethinkdb.com/apt/pubkey.gpg | sudo apt-key add -
   sudo apt-get update
